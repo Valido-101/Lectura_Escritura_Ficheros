@@ -10,7 +10,15 @@ public class Lectura_ficheros {
 
 		Lee_Fichero acceso=new Lee_Fichero();
 		
-		acceso.lee();
+		char[] stats=new char[3];
+		
+		stats=acceso.lee();
+		
+		for(int e: stats) {
+			
+			System.out.println(e);
+			
+		}
 		
 	}
 	
@@ -26,13 +34,15 @@ class Lee_Fichero{
 	
 	//FileReader para indicarle el fichero a leer
 	
-	public void lee() {
+	public char[] lee() {
+		
+		char[] stats=new char[3];
 		
 		try {
 			FileReader entrada=new FileReader("C:/Users/Jesus/Desktop/Eclipse/Ficheros/src/Escritura/fichero.txt");
 			//boton derecho para crear excepcion
 			
-			int x=0;
+			int x=0,i=0;
 			//con esto almacena el primer caracter
 			//modificamos la excepcióm
 			
@@ -49,24 +59,36 @@ class Lee_Fichero{
 				}
 				*/
 				
+				if(x!='\n') {
+					
+					stats[i]=(char)x;
+					
+				}else {
+					
+					i++;
+					
+				}
 				
 				if(x==-1){
 					//Si f es igual a -1 rompe el bucle para que no salga el carácter ?
 					break;
 				}
 				
-				char letra=(char)x;
+				//char letra=(char)x;
 				
-				System.out.print(letra);
+				//System.out.print(letra);
 				//con esto obtenemos el codigo de cada caracter
 							
 			}
 			
+			
 			entrada.close();
 			System.out.println("\nTarea Completada");
+			return stats;
 			
 		} catch (IOException e) {
 			System.out.println("ERROR!, no se encuentra el fichero");
+			return stats;
 		}
 		
 		//siempre nos pide TryCatch para controlar errores de subida
