@@ -32,21 +32,21 @@ class Lee_Fichero{
 			FileReader entrada=new FileReader("C:/Users/Jesus/Desktop/Eclipse/Ficheros/src/Escritura/fichero.txt");
 			//boton derecho para crear excepcion
 			
-			int f=0;
+			int x=0;
 			//con esto almacena el primer caracter
 			//modificamos la excepcióm
 			
-			while (f!=-1) {
+			while (x!=-1) {
 				//mientras f sea distinto de -1, es decir que no haya llegado al final
 				
-				f=entrada.read();
+				x=entrada.read();
 				
-				if(f==-1){
+				if(x==-1){
 					//Si f es igual a -1 rompe el bucle para que no salga el carácter ?
 					break;
 				}
 				
-				char letra=(char)f;
+				char letra=(char)x;
 				
 				System.out.print(letra);
 				//con esto obtenemos el codigo de cada caracter
