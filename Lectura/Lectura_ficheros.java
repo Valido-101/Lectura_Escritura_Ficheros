@@ -41,6 +41,15 @@ class Lee_Fichero{
 				
 				x=entrada.read();
 				
+				//Lee solo la primera línea
+				/*if((char)x=='\n') {
+					
+					break;
+					
+				}
+				*/
+				
+				
 				if(x==-1){
 					//Si f es igual a -1 rompe el bucle para que no salga el carácter ?
 					break;
@@ -54,7 +63,7 @@ class Lee_Fichero{
 			}
 			
 			entrada.close();
-			System.out.println("Tarea Completada");
+			System.out.println("\nTarea Completada");
 			
 		} catch (IOException e) {
 			System.out.println("ERROR!, no se encuentra el fichero");

@@ -18,17 +18,20 @@ class Escribir{
 	
 	public void escribe() {
 		
-		String frase="Hola mundo, estoy escribiendo en ficheros\n";
+		String frase="Hola mundo, estoy escribiendo en ficheros3\n";
 		
 		try {
 			FileWriter escritor =new FileWriter("C:/Users/Jesus/Desktop/Eclipse/Ficheros/src/Escritura/fichero.txt", true);
 			//el argumento true agrega el contenido si el fichero existe
 			//Sin true solo machaca el fichero
 			
-			for (int i=0; i<frase.length();i++) {
+			/*for (int i=0; i<frase.length();i++) {
 				
 				escritor.write(frase.charAt(i));
 			}
+			*/
+			
+			escritor.write(frase);
 			
 			System.out.println("Tarea Completada");
 			escritor.close();
